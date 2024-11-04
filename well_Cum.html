@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wowchemy Research Group</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #fff;
+            padding: 1em;
+            text-align: left;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .navbar a {
+            margin-right: 15px;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .slider {
+            position: relative;
+            width: 100%;
+            max-height: 600px;
+            overflow: hidden;
+        }
+        .slider img {
+            width: 100%;
+            max-height: 600px;
+            object-fit: cover;
+        }
+        .slider-content {
+            position: absolute;
+            bottom: 20%;
+            left: 10%;
+            color: white;
+        }
+        .slider-content h1 {
+            font-size: 3em;
+        }
+        .slider-content p {
+            font-size: 1.5em;
+        }
+        .slider-content span {
+            font-size: 2em;
+            margin-right: 10px;
+        }
+        .arrows {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .arrows span {
+            font-size: 2em;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#">Tour</a>
+        <a href="#">News</a>
+        <a href="#">People</a>
+        <a href="#">Events</a>
+        <a href="#">Publications</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="slider">
+        <img src="your-image-url.jpg" alt="Wowchemy Research Group Banner">
+        <div class="slider-content">
+            <h1><span>👋</span> Welcome to the group</h1>
+            <p>Take a look at what we’re working on...</p>
+        </div>
+        <div class="arrows">
+            <span class="prev">&#10094;</span>
+            <span class="next">&#10095;</span>
+        </div>
+    </div>
+
+    <script>
+        const prev = document.querySelector('.prev');
+        const next = document.querySelector('.next');
+        let currentImage = 0;
+
+        const images = [
+            "your-image-url-1.jpg", 
+            "your-image-url-2.jpg", 
+            "your-image-url-3.jpg"
+        ];
+
+        const slider = document.querySelector('.slider img');
+
+        prev.addEventListener('click', () => {
+            currentImage = (currentImage > 0) ? currentImage - 1 : images.length - 1;
+            slider.src = images[currentImage];
+        });
+
+        next.addEventListener('click', () => {
+            currentImage = (currentImage < images.length - 1) ? currentImage + 1 : 0;
+            slider.src = images[currentImage];
+        });
+    </script>
+
+</body>
+</html>
